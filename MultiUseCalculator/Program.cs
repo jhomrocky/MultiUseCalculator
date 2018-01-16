@@ -13,6 +13,8 @@ namespace MultiUseCalculator
             //response string declared here for use later
             string menuResponse;
             //NOTE: methods are at bottom
+            //EXTRA NOTE: end of methods asks if user wants to do a new equation, but can't put choices after into new method,
+            //didn't want to use 'goto' but it simply works the best for navigating menus in this case
 
             Console.WriteLine("Multi-Use Calculator Intro");
 
@@ -32,7 +34,7 @@ namespace MultiUseCalculator
             Console.WriteLine("9. Simple interest");
             Console.WriteLine("10. Exit");
 
-            
+
             var menuChoice = Convert.ToInt32(Console.ReadLine());
 
             switch (menuChoice)
@@ -41,7 +43,7 @@ namespace MultiUseCalculator
                     //'goto' point for this sub menu
                     SimpleRetry:
 
-                    Console.WriteLine("Simple math equations:");
+                    Console.WriteLine("Simple math equations: \n");
 
                     Console.WriteLine("1. Add");
                     Console.WriteLine("2. Subtract");
@@ -50,6 +52,7 @@ namespace MultiUseCalculator
                     Console.WriteLine("");
                     Console.WriteLine("5. Back to Main Menu");
                     Console.WriteLine("6. Exit");
+
 
                     var simpleSubChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -85,7 +88,7 @@ namespace MultiUseCalculator
                     //'goto' point for this sub menu
                     PerimeterRetry:
 
-                    Console.WriteLine("Perimeter Equations:");
+                    Console.WriteLine("Perimeter Equations: \n");
 
                     Console.WriteLine("1. Square");
                     Console.WriteLine("2. Rectangle");
@@ -102,13 +105,14 @@ namespace MultiUseCalculator
                     {
                         case 1:
                             CalcSquarePerimeter();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto PerimeterRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -123,13 +127,14 @@ namespace MultiUseCalculator
                             break;
                         case 2:
                             CalcRectPerimeter();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto PerimeterRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -144,13 +149,14 @@ namespace MultiUseCalculator
                             break;
                         case 3:
                             CalcTrianglePerimeter();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto PerimeterRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -165,13 +171,14 @@ namespace MultiUseCalculator
                             break;
                         case 4:
                             CalcCircleCircumference();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto PerimeterRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -206,7 +213,7 @@ namespace MultiUseCalculator
                     //'goto' point for this sub menu
                     AreaRetry:
 
-                    Console.WriteLine("Area equations:");
+                    Console.WriteLine("Area equations: \n");
 
                     Console.WriteLine("1. Square");
                     Console.WriteLine("2. Rectangle");
@@ -227,13 +234,14 @@ namespace MultiUseCalculator
                     {
                         case 1:
                             CalcSquareArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -248,13 +256,14 @@ namespace MultiUseCalculator
                             break;
                         case 2:
                             CalcRectangleArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -269,13 +278,14 @@ namespace MultiUseCalculator
                             break;
                         case 3:
                             CalcParallelogramArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -290,13 +300,14 @@ namespace MultiUseCalculator
                             break;
                         case 4:
                             CalcTriangleArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -311,13 +322,14 @@ namespace MultiUseCalculator
                             break;
                         case 5:
                             CalcCircleArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -332,13 +344,14 @@ namespace MultiUseCalculator
                             break;
                         case 6:
                             CalcSphereArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -353,13 +366,14 @@ namespace MultiUseCalculator
                             break;
                         case 7:
                             CalcTrapezoidArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -374,13 +388,14 @@ namespace MultiUseCalculator
                             break;
                         case 8:
                             CalcCubeArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -395,13 +410,14 @@ namespace MultiUseCalculator
                             break;
                         case 9:
                             CalcCylinderArea();
+
                             Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
                             menuResponse = Console.ReadLine();
-                            if (menuResponse.ToLower() == "sm")
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
                                 goto AreaRetry;
-                            else if (menuResponse.ToLower() == "mm")
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
                                 goto MainRetry;
-                            else if (menuResponse.ToLower() == "q")
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
                             {
                                 Console.WriteLine("Take care! Press any key to quit.");
                                 Console.ReadKey();
@@ -449,22 +465,136 @@ namespace MultiUseCalculator
                     switch (volumeSubChoice)
                     {
                         case 1:
-                            //cube func here
+                            CalcCubeVolume();
+
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto VolumeRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto VolumeRetry;
+                            }
                             break;
                         case 2:
-                            //rectangular cont func here
+                            CalcRectContainerVolume();
+
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto VolumeRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto VolumeRetry;
+                            }
                             break;
                         case 3:
-                            //pyramid func here
+                            CalcPyramidVolume();
+
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto VolumeRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto VolumeRetry;
+                            }
                             break;
                         case 4:
-                            //cylinder func here
+                            CalcCylinderVolume();
+
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto VolumeRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto VolumeRetry;
+                            }
                             break;
                         case 5:
-                            //cone func here
+                            CalcConeVolume();
+
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto VolumeRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto VolumeRetry;
+                            }
                             break;
                         case 6:
-                            //sphere func here
+                            CalcSphereVolume();
+
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto VolumeRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto VolumeRetry;
+                            }
                             break;
                         case 7:
                             //sends user to main menu
@@ -482,16 +612,67 @@ namespace MultiUseCalculator
 
                     break;
                 case 5:
-                    Console.WriteLine("Distance between two points:");
-                    //distance func here
+                    CalcPointsDistance();
+
+                    DistRetry:
+                    Console.WriteLine("Type MM for Main Menu, or Q to quit.");
+                    menuResponse = Console.ReadLine();
+                    if (menuResponse != null && menuResponse.ToLower() == "mm")
+                        goto MainRetry;
+                    else if (menuResponse != null && menuResponse.ToLower() == "q")
+                    {
+                        Console.WriteLine("Take care! Press any key to quit.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        //goto whatever submenu we're in
+                        goto DistRetry;
+                    }
                     break;
                 case 6:
-                    Console.WriteLine("Slope of a line:");
-                    //slope func here
+                    SlopeOfLine();
+
+                    SlopeRetry:
+                    Console.WriteLine("Type MM for Main Menu, or Q to quit.");
+                    menuResponse = Console.ReadLine();
+                    if (menuResponse != null && menuResponse.ToLower() == "mm")
+                        goto MainRetry;
+                    else if (menuResponse != null && menuResponse.ToLower() == "q")
+                    {
+                        Console.WriteLine("Take care! Press any key to quit.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        //goto whatever submenu we're in
+                        goto SlopeRetry;
+                    }
                     break;
                 case 7:
-                    Console.WriteLine("Pythagorean Theorem");
-                    //pyth theorem func here
+                    PythagoreanTheorem();
+
+                    PythRetry:
+                    Console.WriteLine("Type MM for Main Menu, or Q to quit.");
+                    menuResponse = Console.ReadLine();
+                    if (menuResponse != null && menuResponse.ToLower() == "mm")
+                        goto MainRetry;
+                    else if (menuResponse != null && menuResponse.ToLower() == "q")
+                    {
+                        Console.WriteLine("Take care! Press any key to quit.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        //goto whatever submenu we're in
+                        goto PythRetry;
+                    }
                     break;
                 case 8:
                     //'goto' point for this sub menu
@@ -552,7 +733,7 @@ namespace MultiUseCalculator
                     Console.WriteLine("Invalid choice, please try again:");
                     goto MainRetry;
             }
-            
+
         }
 
         //start of math methods
@@ -582,13 +763,13 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Side (S) = ");
-                decimal s = Convert.ToDecimal(Console.ReadLine());
-                decimal p = 4 * s;
+                double s = double.Parse(Console.ReadLine());
+                double p = 4 * s;
                 Console.WriteLine("The perimeter is: {0}", p);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcRectPerimeter()
@@ -597,15 +778,15 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Length = ");
-                decimal l = Convert.ToDecimal(Console.ReadLine());
+                double l = double.Parse(Console.ReadLine());
                 Console.Write("Width = ");
-                decimal w = Convert.ToDecimal(Console.ReadLine());
-                decimal p = (2*l) + (2*w);
+                double w = double.Parse(Console.ReadLine());
+                double p = (2 * l) + (2 * w);
                 Console.WriteLine("The perimeter is: {0}", p);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcTrianglePerimeter()
@@ -614,17 +795,17 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Side 1 = ");
-                decimal s1 = Convert.ToDecimal(Console.ReadLine());
+                double s1 = double.Parse(Console.ReadLine());
                 Console.Write("Side 2 = ");
-                decimal s2 = Convert.ToDecimal(Console.ReadLine());
+                double s2 = double.Parse(Console.ReadLine());
                 Console.Write("Side 2 = ");
-                decimal s3 = Convert.ToDecimal(Console.ReadLine());
-                decimal p = s1 + s2 + s3;
+                double s3 = double.Parse(Console.ReadLine());
+                double p = s1 + s2 + s3;
                 Console.WriteLine("The perimeter is: {0}", p);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcCircleCircumference()
@@ -633,13 +814,13 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Diameter (Remember D=2*radius) = ");
-                decimal d = Convert.ToDecimal(Console.ReadLine());
-                decimal c = d * (Convert.ToDecimal(Math.PI));
+                double d = double.Parse(Console.ReadLine());
+                double c = d * Math.PI;
                 Console.WriteLine("The perimeter is: {0}", c);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         //Areas
@@ -649,13 +830,13 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Side (S) = ");
-                decimal s = Convert.ToDecimal(Console.ReadLine());
-                decimal a = s * s;
+                double s = double.Parse(Console.ReadLine());
+                double a = s * s;
                 Console.WriteLine("The area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcRectangleArea()
@@ -664,15 +845,15 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Length = ");
-                decimal l = Convert.ToDecimal(Console.ReadLine());
+                double l = double.Parse(Console.ReadLine());
                 Console.Write("Width = ");
-                decimal w = Convert.ToDecimal(Console.ReadLine());
-                decimal a = l * w;
+                double w = double.Parse(Console.ReadLine());
+                double a = l * w;
                 Console.WriteLine("The area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcParallelogramArea()
@@ -681,15 +862,15 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Base = ");
-                decimal b = Convert.ToDecimal(Console.ReadLine());
+                double b = double.Parse(Console.ReadLine());
                 Console.Write("Height = ");
-                decimal h = Convert.ToDecimal(Console.ReadLine());
-                decimal a = b * h;
+                double h = double.Parse(Console.ReadLine());
+                double a = b * h;
                 Console.WriteLine("The area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcTriangleArea()
@@ -698,15 +879,15 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Base = ");
-                decimal b = Convert.ToDecimal(Console.ReadLine());
+                double b = double.Parse(Console.ReadLine());
                 Console.Write("Height = ");
-                decimal h = Convert.ToDecimal(Console.ReadLine());
-                decimal a = Convert.ToDecimal(.5) * (b * h);
+                double h = double.Parse(Console.ReadLine());
+                double a = .5 * (b * h);
                 Console.WriteLine("The area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcCircleArea()
@@ -715,13 +896,13 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Radius = ");
-                decimal r = Convert.ToDecimal(Console.ReadLine());
-                decimal a = Convert.ToDecimal(Math.PI) * (r * r);
+                double r = double.Parse(Console.ReadLine());
+                double a = Math.PI * (r * r);
                 Console.WriteLine("The area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcSphereArea()
@@ -730,13 +911,13 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Radius = ");
-                decimal r = Convert.ToDecimal(Console.ReadLine());
-                decimal s = 4 * Convert.ToDecimal(Math.PI) * (r * r);
+                double r = double.Parse(Console.ReadLine());
+                double s = 4 * Math.PI * (r * r);
                 Console.WriteLine("The area is: {0}", s);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcTrapezoidArea()
@@ -745,17 +926,17 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("B1 = ");
-                decimal b1 = Convert.ToDecimal(Console.ReadLine());
+                double b1 = double.Parse(Console.ReadLine());
                 Console.Write("B2 = ");
-                decimal b2 = Convert.ToDecimal(Console.ReadLine());
+                double b2 = double.Parse(Console.ReadLine());
                 Console.Write("Height = ");
-                decimal h = Convert.ToDecimal(Console.ReadLine());
-                decimal a = Convert.ToDecimal(.5) * ((b1 + b2) * h);
+                double h = double.Parse(Console.ReadLine());
+                double a = .5 * ((b1 + b2) * h);
                 Console.WriteLine("The area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcCubeArea()
@@ -764,13 +945,13 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Side (S) = ");
-                decimal s = Convert.ToDecimal(Console.ReadLine());
-                decimal a = 6 * (s * s);
+                double s = double.Parse(Console.ReadLine());
+                double a = 6 * (s * s);
                 Console.WriteLine("The surface area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
 
         static void CalcCylinderArea()
@@ -779,15 +960,217 @@ namespace MultiUseCalculator
             do
             {
                 Console.Write("Radius = ");
-                decimal r = Convert.ToDecimal(Console.ReadLine());
+                double r = double.Parse(Console.ReadLine());
                 Console.Write("Height = ");
-                decimal h = Convert.ToDecimal(Console.ReadLine());
-                decimal a = 2 * Convert.ToDecimal(Math.PI) * (r * h);
+                double h = double.Parse(Console.ReadLine());
+                double a = 2 * Math.PI * (r * h);
                 Console.WriteLine("The surface area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
-            while (calcResponse.ToLower() == "y");
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        //Volumes
+
+        static void CalcCubeVolume()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Side (S) = ");
+                double s = double.Parse(Console.ReadLine());
+                double v = s * s * s;
+                Console.WriteLine("The volume is: {0}", v);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcRectContainerVolume()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Length = ");
+                double l = double.Parse(Console.ReadLine());
+                Console.Write("Width = ");
+                double w = double.Parse(Console.ReadLine());
+                Console.Write("Height = ");
+                double h = double.Parse(Console.ReadLine());
+                double v = l * w * h;
+                Console.WriteLine("The volume is: {0}", v);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcPyramidVolume()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Base = ");
+                double b = double.Parse(Console.ReadLine());
+                Console.Write("Height = ");
+                double h = double.Parse(Console.ReadLine());
+                double v = (b * b * h) / 3;
+                Console.WriteLine("The volume is: {0}", v);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcCylinderVolume()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Radius = ");
+                double r = double.Parse(Console.ReadLine());
+                Console.Write("Height = ");
+                double h = double.Parse(Console.ReadLine());
+                double v = Math.PI * (r * r) * h;
+                Console.WriteLine("The volume is: {0}", v);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcConeVolume()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Radius = ");
+                double r = double.Parse(Console.ReadLine());
+                Console.Write("Height = ");
+                double h = double.Parse(Console.ReadLine());
+                double v = (Math.PI * (r * r) * h) / 3;
+                Console.WriteLine("The volume is: {0}", v);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcSphereVolume()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Radius = ");
+                double r = double.Parse(Console.ReadLine());
+                double v = (4 * (Math.PI * (r * r * r))) / 3;
+                Console.WriteLine("The volume is: {0}", v);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        //Distance between 2 points on a plane
+
+        static void CalcPointsDistance()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("x1 = ");
+                double x1 = double.Parse(Console.ReadLine());
+                Console.Write("y1 = ");
+                double y1 = double.Parse(Console.ReadLine());
+                Console.Write("x2 = ");
+                double x2 = double.Parse(Console.ReadLine());
+                Console.Write("y2 = ");
+                double y2 = double.Parse(Console.ReadLine());
+                double d = Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+                Console.WriteLine("The distance is: {0}", d);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        //Slope equation of M = (x2-x1) / (y2-y1)
+        static void SlopeOfLine()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("x1 = ");
+                double x1 = double.Parse(Console.ReadLine());
+                Console.Write("y1 = ");
+                double y1 = double.Parse(Console.ReadLine());
+                Console.Write("x2 = ");
+                double x2 = double.Parse(Console.ReadLine());
+                Console.Write("y2 = ");
+                double y2 = double.Parse(Console.ReadLine());
+                double y3 = (y2 - y1);
+                double x3 = (x2 - x1);
+
+                //'x3' is the denominator in the slope equation
+                //this if statement makes it 
+                //so something like -1/-1 shows as 1 (the correct answer)
+
+                if (x3 == y3 || x3 == 1 || y3 % x3 == 0)
+                {
+                    double m = y3 / x3;
+                    Console.WriteLine("The slope of the line is: {0} (simplified) or {1}/{2} for fractional notation.", m, y3, x3);
+                }
+                else if (x3 != y3)
+                {
+                    Console.WriteLine("The slope of the line is: {0}/{1}", y3, x3);
+                }
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        //Name kinda explains what this one is
+        static void PythagoreanTheorem()
+        {
+            string calcResponse;
+            do
+            {
+                RetryEquation:
+                Console.WriteLine("Enter 0 for the side you want to know. \n");
+                Console.Write("A = ");
+                double a = double.Parse(Console.ReadLine());
+                Console.Write("B = ");
+                double b = double.Parse(Console.ReadLine());
+                Console.Write("C = ");
+                double c = double.Parse(Console.ReadLine());
+
+                if (a == 0)
+                {
+                    a = Math.Sqrt((c * c) - (b * b));
+                    Console.WriteLine("The length of side A is: {0}", a);
+                }
+                else if (b == 0)
+                {
+                    b = Math.Sqrt((c * c) - (a * a));
+                    Console.WriteLine("The length of side B is: {0}", b);
+                }
+                else if (c == 0)
+                {
+                    c = Math.Sqrt((a * a) + (b * b));
+                    Console.WriteLine("The length of side C is: {0}", c);
+                }
+                else
+                {
+                    Console.WriteLine("You screwed up somewhere. Please re-read the instructions and try again. \n");
+                    goto RetryEquation;
+                }
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
         }
     }
 }
