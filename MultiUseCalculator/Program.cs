@@ -226,31 +226,193 @@ namespace MultiUseCalculator
                     switch (areaSubChoice)
                     {
                         case 1:
-                            //square area func here
+                            CalcSquareArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 2:
-                            //rectangle area func here
+                            CalcRectangleArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 3:
-                            //parallelogram area func here
+                            CalcParallelogramArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 4:
-                            //triangle area func here
+                            CalcTriangleArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 5:
-                            //circle area func here
+                            CalcCircleArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 6:
-                            //sphere area func here
+                            CalcSphereArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 7:
-                            //trapezoid area func here
+                            CalcTrapezoidArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 8:
-                            //cube surface area func here
+                            CalcCubeArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 9:
-                            //cylinder surface area func here
+                            CalcCylinderArea();
+                            Console.WriteLine("Type SM for SubMenu, MM for Main Menu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse.ToLower() == "sm")
+                                goto AreaRetry;
+                            else if (menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AreaRetry;
+                            }
                             break;
                         case 10:
                             goto MainRetry;
@@ -412,6 +574,8 @@ namespace MultiUseCalculator
         //CW("Bye")
         //Environment.Exit(0)
 
+
+        //Perimeters
         static void CalcSquarePerimeter()
         {
             string calcResponse;
@@ -472,6 +636,154 @@ namespace MultiUseCalculator
                 decimal d = Convert.ToDecimal(Console.ReadLine());
                 decimal c = d * (Convert.ToDecimal(Math.PI));
                 Console.WriteLine("The perimeter is: {0}", c);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        //Areas
+        static void CalcSquareArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Side (S) = ");
+                decimal s = Convert.ToDecimal(Console.ReadLine());
+                decimal a = s * s;
+                Console.WriteLine("The area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcRectangleArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Length = ");
+                decimal l = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("Width = ");
+                decimal w = Convert.ToDecimal(Console.ReadLine());
+                decimal a = l * w;
+                Console.WriteLine("The area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcParallelogramArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Base = ");
+                decimal b = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("Height = ");
+                decimal h = Convert.ToDecimal(Console.ReadLine());
+                decimal a = b * h;
+                Console.WriteLine("The area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcTriangleArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Base = ");
+                decimal b = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("Height = ");
+                decimal h = Convert.ToDecimal(Console.ReadLine());
+                decimal a = Convert.ToDecimal(.5) * (b * h);
+                Console.WriteLine("The area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcCircleArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Radius = ");
+                decimal r = Convert.ToDecimal(Console.ReadLine());
+                decimal a = Convert.ToDecimal(Math.PI) * (r * r);
+                Console.WriteLine("The area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcSphereArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Radius = ");
+                decimal r = Convert.ToDecimal(Console.ReadLine());
+                decimal s = 4 * Convert.ToDecimal(Math.PI) * (r * r);
+                Console.WriteLine("The area is: {0}", s);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcTrapezoidArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("B1 = ");
+                decimal b1 = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("B2 = ");
+                decimal b2 = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("Height = ");
+                decimal h = Convert.ToDecimal(Console.ReadLine());
+                decimal a = Convert.ToDecimal(.5) * ((b1 + b2) * h);
+                Console.WriteLine("The area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcCubeArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Side (S) = ");
+                decimal s = Convert.ToDecimal(Console.ReadLine());
+                decimal a = 6 * (s * s);
+                Console.WriteLine("The surface area is: {0}", a);
+                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse.ToLower() == "y");
+        }
+
+        static void CalcCylinderArea()
+        {
+            string calcResponse;
+            do
+            {
+                Console.Write("Radius = ");
+                decimal r = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("Height = ");
+                decimal h = Convert.ToDecimal(Console.ReadLine());
+                decimal a = 2 * Convert.ToDecimal(Math.PI) * (r * h);
+                Console.WriteLine("The surface area is: {0}", a);
                 Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
