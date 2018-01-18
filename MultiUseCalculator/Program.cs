@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -10,8 +12,10 @@ namespace MultiUseCalculator
     {
         static void Main(string[] args)
         {
-            //response string declared here for use later
+            //response string declared here for use later in menus/submenus for navigation purposes
             string menuResponse;
+                        
+
             //NOTE: methods are at bottom
             //EXTRA NOTE: end of methods asks if user wants to do a new equation, but can't put choices after into new method,
             //didn't want to use 'goto' but it simply works the best for navigating menus in this case
@@ -693,16 +697,76 @@ namespace MultiUseCalculator
                     switch (centralTendSubChoice)
                     {
                         case 1:
-                            //average func here
+                            CalcAverage();
+
+                            AvgRetry:
+                            Console.WriteLine("Type MM for Main Menu, SM for SubMenu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto CentralRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto AvgRetry;
+                            }
                             break;
                         case 2:
-                            //median func here
+                            CalcMedian();
+
+                            MedianRetry:
+                            Console.WriteLine("Type MM for Main Menu, SM for SubMenu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto CentralRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto MedianRetry;
+                            }
                             break;
                         case 3:
-                            //mode func here
-                            break;
+                            Console.WriteLine("Mode method under construction. Sorry.");
+                            goto MainRetry;
                         case 4:
-                            //range func here
+                            RangeRetry:
+
+                            Console.WriteLine("Type MM for Main Menu, SM for SubMenu, or Q to quit.");
+                            menuResponse = Console.ReadLine();
+                            if (menuResponse != null && menuResponse.ToLower() == "mm")
+                                goto MainRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "sm")
+                                goto CentralRetry;
+                            else if (menuResponse != null && menuResponse.ToLower() == "q")
+                            {
+                                Console.WriteLine("Take care! Press any key to quit.");
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid choice. Please try again.");
+                                //goto whatever submenu we're in
+                                goto RangeRetry;
+                            }
+                            CalcRange();
                             break;
                         case 5:
                             //sends user back to main menu
@@ -720,8 +784,25 @@ namespace MultiUseCalculator
 
                     break;
                 case 9:
-                    Console.WriteLine("Simple interest:");
-                    //simple interest func here
+                    CalcSimpleInterest();
+
+                    InterestRetry:
+                    Console.WriteLine("Type MM for Main Menu, or Q to quit.");
+                    menuResponse = Console.ReadLine();
+                    if (menuResponse != null && menuResponse.ToLower() == "mm")
+                        goto MainRetry;
+                    else if (menuResponse != null && menuResponse.ToLower() == "q")
+                    {
+                        Console.WriteLine("Take care! Press any key to quit.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        //goto whatever submenu we're in
+                        goto InterestRetry;
+                    }
                     break;
                 case 10:
                     Console.WriteLine("Take care! Press any key to quit.");
@@ -738,23 +819,6 @@ namespace MultiUseCalculator
 
         //start of math methods
 
-        //THIS PART GOES IN METHOD
-        //public void MethodName(overloads here)
-        //do{
-        //math here (use Console.Write("varletter ") then readline for input to show after "letter: "
-        //CW("New problem?")
-        //}
-        //'while' {new problem answer.ToLower == "yes"}
-
-        //THIS PART GOES IN MENU
-        //CW("Type 1 for Main Menu, 2 to Quit")
-        //var answer = Console.ReadLine();
-        //if (answer == 1)
-        //goto MainRetry
-        //else if (answer == 2)
-        //CW("Bye")
-        //Environment.Exit(0)
-
 
         //Perimeters
         static void CalcSquarePerimeter()
@@ -766,7 +830,7 @@ namespace MultiUseCalculator
                 double s = double.Parse(Console.ReadLine());
                 double p = 4 * s;
                 Console.WriteLine("The perimeter is: {0}", p);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -783,7 +847,7 @@ namespace MultiUseCalculator
                 double w = double.Parse(Console.ReadLine());
                 double p = (2 * l) + (2 * w);
                 Console.WriteLine("The perimeter is: {0}", p);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -802,7 +866,7 @@ namespace MultiUseCalculator
                 double s3 = double.Parse(Console.ReadLine());
                 double p = s1 + s2 + s3;
                 Console.WriteLine("The perimeter is: {0}", p);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -817,7 +881,7 @@ namespace MultiUseCalculator
                 double d = double.Parse(Console.ReadLine());
                 double c = d * Math.PI;
                 Console.WriteLine("The perimeter is: {0}", c);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -833,7 +897,7 @@ namespace MultiUseCalculator
                 double s = double.Parse(Console.ReadLine());
                 double a = s * s;
                 Console.WriteLine("The area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -850,7 +914,7 @@ namespace MultiUseCalculator
                 double w = double.Parse(Console.ReadLine());
                 double a = l * w;
                 Console.WriteLine("The area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -867,7 +931,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double a = b * h;
                 Console.WriteLine("The area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -884,7 +948,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double a = .5 * (b * h);
                 Console.WriteLine("The area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -899,7 +963,7 @@ namespace MultiUseCalculator
                 double r = double.Parse(Console.ReadLine());
                 double a = Math.PI * (r * r);
                 Console.WriteLine("The area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -914,7 +978,7 @@ namespace MultiUseCalculator
                 double r = double.Parse(Console.ReadLine());
                 double s = 4 * Math.PI * (r * r);
                 Console.WriteLine("The area is: {0}", s);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -933,7 +997,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double a = .5 * ((b1 + b2) * h);
                 Console.WriteLine("The area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -948,7 +1012,7 @@ namespace MultiUseCalculator
                 double s = double.Parse(Console.ReadLine());
                 double a = 6 * (s * s);
                 Console.WriteLine("The surface area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -965,7 +1029,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double a = 2 * Math.PI * (r * h);
                 Console.WriteLine("The surface area is: {0}", a);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -982,7 +1046,7 @@ namespace MultiUseCalculator
                 double s = double.Parse(Console.ReadLine());
                 double v = s * s * s;
                 Console.WriteLine("The volume is: {0}", v);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1001,7 +1065,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double v = l * w * h;
                 Console.WriteLine("The volume is: {0}", v);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1018,7 +1082,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double v = (b * b * h) / 3;
                 Console.WriteLine("The volume is: {0}", v);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1035,7 +1099,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double v = Math.PI * (r * r) * h;
                 Console.WriteLine("The volume is: {0}", v);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1052,7 +1116,7 @@ namespace MultiUseCalculator
                 double h = double.Parse(Console.ReadLine());
                 double v = (Math.PI * (r * r) * h) / 3;
                 Console.WriteLine("The volume is: {0}", v);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1067,7 +1131,7 @@ namespace MultiUseCalculator
                 double r = double.Parse(Console.ReadLine());
                 double v = (4 * (Math.PI * (r * r * r))) / 3;
                 Console.WriteLine("The volume is: {0}", v);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1090,7 +1154,7 @@ namespace MultiUseCalculator
                 double y2 = double.Parse(Console.ReadLine());
                 double d = Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
                 Console.WriteLine("The distance is: {0}", d);
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1126,7 +1190,7 @@ namespace MultiUseCalculator
                 {
                     Console.WriteLine("The slope of the line is: {0}/{1}", y3, x3);
                 }
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
@@ -1167,7 +1231,125 @@ namespace MultiUseCalculator
                     Console.WriteLine("You screwed up somewhere. Please re-read the instructions and try again. \n");
                     goto RetryEquation;
                 }
-                Console.WriteLine("Do another? Y for Yes, or enter to see your options.");
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcAverage()
+        {
+            //used for do-while loop
+            string calcResponse;
+
+            List<double> avgList = new List<double>();
+            do
+            {
+                double averageTotal = 0;
+                Console.WriteLine("How many numbers are you entering?");
+                int avgAmount = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter your numbers to find the average:");
+                for (int i = 0; i < avgAmount; i++)
+                {
+                    double avgEntry = Convert.ToDouble(Console.ReadLine());
+                    avgList.Add(avgEntry);
+                    averageTotal += avgEntry;
+                }
+                averageTotal = averageTotal / avgAmount;
+                Console.WriteLine("Your average is: {0}", averageTotal);
+                avgList.Clear();
+
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcMedian()
+        {
+            //used for do-while loop
+            string calcResponse;
+            List<double> medianList = new List<double>();
+            do
+            {
+                double medianTotal;
+                Console.WriteLine("How many numbers are you entering?");
+                int medianAmount = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter your numbers to find the median:");
+                for (int i = 0; i < medianAmount; i++)
+                {
+                    double medianEntry = Convert.ToDouble(Console.ReadLine());
+                    medianList.Add(medianEntry);
+                }
+                //takes middle 2 indices of an evenly numbered list and finds the avg of them
+                if (medianList.Count % 2 == 0)
+                {
+                    medianTotal = ((medianList.ElementAt(medianList.Count / 2) - 1) +
+                                   (medianList.ElementAt(medianList.Count / 2))) / 2;
+                    Console.WriteLine("Your median is: {0}", medianTotal);
+                    medianList.Clear();
+                }
+                //if not, just finds the middle number (median...)
+                else if (medianList.Count % 2 == 1)
+                {
+                    medianTotal = (medianList.ElementAt(medianAmount / 2));
+                    Console.WriteLine("Your median is: {0}", medianTotal);
+                    medianList.Clear();
+                }
+
+                medianList.Clear();
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
+                calcResponse = Console.ReadLine();
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcRange()
+        {
+            //used for do-while loop
+            string calcResponse;
+            List<double> rangeList = new List<double>();
+            do
+            {
+                double rangeTotal;
+                Console.WriteLine("How many numbers are you entering?");
+                int rangeListSize = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter your numbers to find the range:");
+                for (int i = 0; i < rangeListSize; i++)
+                {
+                    double rangeListEntry = Convert.ToDouble(Console.ReadLine());
+                    rangeList.Add(rangeListEntry);
+                }
+                rangeList.Sort();
+                rangeTotal = rangeList.ElementAt(rangeListSize - 1) - rangeList.ElementAt(0);
+                Console.WriteLine("Your range is: {0}", rangeTotal);
+                rangeList.Clear();
+
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
+                calcResponse = Console.ReadLine();
+
+            }
+            while (calcResponse != null && calcResponse.ToLower() == "y");
+        }
+
+        static void CalcSimpleInterest()
+        {
+            //used for do-while loop
+            string calcResponse;
+            do
+            {
+                Console.Write("Principle (P) = ");
+                double p = double.Parse(Console.ReadLine());
+                Console.Write("Rate per year (in decimal) (r) = ");
+                double r = double.Parse(Console.ReadLine());
+                Console.Write("Time (in years) (t) = ");
+                double t = double.Parse(Console.ReadLine());
+
+                double interest = p * (r / 100) * t;
+
+                Console.WriteLine("Your simple interest is: ${0}", interest);
+
+                Console.WriteLine("Do another? Y for Yes, or press enter to see your options.");
                 calcResponse = Console.ReadLine();
             }
             while (calcResponse != null && calcResponse.ToLower() == "y");
